@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Unity.VisualScripting;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class GeneratableBackground : BackgroundNode
@@ -33,8 +34,8 @@ public class GeneratableBackground : BackgroundNode
         var currentConfigs = new List<BackgeoundEntiity>();
         foreach (BackgeoundEntiity config in _configs)
         {
-            if ((config.frames[0] == -1 || config.frames[0] >= WorldInfo.Instance().globalFrame) &&
-                (config.frames[1] == -1 || config.frames[1] <= WorldInfo.Instance().globalFrame))
+            if ((config.frames[0] == -1 || config.frames[0] <= WorldInfo.Instance().globalFrame) &&
+                (config.frames[1] == -1 || config.frames[1] >= WorldInfo.Instance().globalFrame))
             {
                 if (config.isSpesial)
                 {
@@ -55,9 +56,13 @@ public class GeneratableBackground : BackgroundNode
 
         while (_entities.Count == 0 || IsRenderOnScreen(_entities[_entities.Count - 1].Item2))
         {
-            int rand = UnityEngine.Random.Range(0, maxRand);
+              int rand = UnityEngine.Random.Range(0, maxRand);
             int index = 0;
             for (; currentConfigs[index].chance < rand; index++, rand -= currentConfigs[index].chance) ;
+
+            if (currentConfigs[index].isSpesial) {
+                currentConfigs[index].chance = 0;
+            }
 
             if (_entities.Count == 0)
             {

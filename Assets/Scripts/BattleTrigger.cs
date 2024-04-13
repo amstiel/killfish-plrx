@@ -8,17 +8,16 @@ public class BattleTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         collision.TryGetComponent(out enemyController);
-        playerController.SetTargetController(enemyController);
-        enemyController.SetTargetController(playerController);
-
-        StartBattle();
+        StartBattle(enemyController, playerController);
     }
 
-    private void StartBattle() 
+    private void StartBattle(EnemyController enemyController, PlayerController playerController) 
     {
+        WorldInfo.Instance().SetState(WorldInfo.GameState.Fight);
         enemyController.deadEvent.AddListener(EndBattle);
         playerController.deadEvent.AddListener(EndBattle);
-        WorldInfo.Instance().SetState(WorldInfo.GameState.Fight);
+        playerController.SetTargetController(enemyController);
+        enemyController.SetTargetController(playerController);
     }
 
     private void EndBattle() 
