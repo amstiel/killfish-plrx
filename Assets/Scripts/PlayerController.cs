@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -11,8 +10,12 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void Move() 
+    public void StartMove() 
     {
-        animator.SetTrigger("move");
+        animator.SetTrigger("startMove");
+    }
+    public void StopMove()
+    {
+        animator.SetTrigger("stoptMove");
     }
 }
