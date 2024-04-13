@@ -1,15 +1,22 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
-public class Controller : MonoBehaviour
+public class CharactersController : MonoBehaviour
 {
+
     [SerializeField] protected int hp;
     [SerializeField] protected int damage;
     [SerializeField] protected int armor;
+    [SerializeField] protected int coins;
+    [SerializeField] private Text textDamagePref;
+    [SerializeField] private RectTransform textSpawnPoint;
     public UnityEvent deadEvent;
     protected int maxHp;
     protected Animator animator;
-    protected Controller targetController;
+    protected CharactersController targetController;
+
+    public int Coins { get => coins;}
 
     protected virtual void Awake()
     {
@@ -23,7 +30,7 @@ public class Controller : MonoBehaviour
         targetController.ReceiveDamage(damage);
     }
 
-    public virtual void SetTargetController(Controller controller)
+    public virtual void SetTargetController(CharactersController controller)
     {
         targetController = controller;
     }
@@ -37,7 +44,11 @@ public class Controller : MonoBehaviour
     {
         int newDamage = damage - armor;
 
-        if(newDamage>0)
+        Text text = Instantiate(textDamagePref, textSpawnPoint);
+
+        text.text = damage.ToString();  
+
+        if (newDamage>0)
             hp -= damage;
 
         if (hp < 0)
@@ -47,7 +58,7 @@ public class Controller : MonoBehaviour
         }
     }
 
-    protected void Dead()
+    protected virtual void Dead()
     {
         deadEvent.Invoke();
         deadEvent.RemoveAllListeners();

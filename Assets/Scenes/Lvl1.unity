@@ -1390,17 +1390,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4643034822533838177, guid: 015f5a9f3dc750a4ea47113b2492d0b1, type: 3}
-      propertyPath: hp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4643034822533838177, guid: 015f5a9f3dc750a4ea47113b2492d0b1, type: 3}
       propertyPath: hpUI
       value: 
       objectReference: {fileID: 1574049898}
-    - target: {fileID: 4643034822533838177, guid: 015f5a9f3dc750a4ea47113b2492d0b1, type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4643034822533838177, guid: 015f5a9f3dc750a4ea47113b2492d0b1, type: 3}
       propertyPath: counterArmor
       value: 

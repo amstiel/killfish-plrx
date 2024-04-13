@@ -1,13 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : Controller
+public class PlayerController : CharactersController
 {
     [SerializeField] private hpUI hpUI;
     [SerializeField] private Text counterDamage;
     [SerializeField] private Text counterArmor;
     [SerializeField] private Text counterCoins;
-    private int coins;
 
     private void Start()
     {

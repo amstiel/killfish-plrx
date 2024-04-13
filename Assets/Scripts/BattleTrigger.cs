@@ -26,7 +26,6 @@ public class BattleTrigger : MonoBehaviour
         {
             enemyController.EndBattle();
         }
-
         playerController.EndBattle();
         WorldInfo.Instance().SetState(WorldInfo.GameState.Moving);
     }

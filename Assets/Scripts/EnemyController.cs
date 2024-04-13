@@ -1,15 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyController : Controller
+public class EnemyController : CharactersController
 {
    
     [SerializeField] private float cooldown;
-    [SerializeField] private int coins;
 
-    public int Coins => coins;
-
-    public override void SetTargetController(Controller target) 
+    public override void SetTargetController(CharactersController target) 
     {
         base.SetTargetController(target);
         StartCoroutine(StartTimerAttack());
@@ -24,6 +21,14 @@ public class EnemyController : Controller
     protected override void Attack()
     {
         base.Attack();
+    }
+
+    protected override void Dead() 
+    {
+        PlayerController playerController = (PlayerController)targetController;
+        playerController.AddCoins(coins);
+        base.Dead();
+
     }
 
     private IEnumerator StartTimerAttack() 
