@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Controller
 {
     [SerializeField] private float moveTime;
+    [SerializeField] private EnemyController enemyTarget;
     private Animator animator; 
+
 
     private void Awake()
     {
@@ -17,5 +19,15 @@ public class PlayerController : MonoBehaviour
     public void StopMove()
     {
         animator.SetTrigger("stoptMove");
+    }
+
+    public void SetEnemyTarget(EnemyController enemy) 
+    {
+        enemyTarget = enemy;
+    }
+
+    private void Attack() 
+    {
+        enemyTarget.SetDamage(damage);
     }
 }

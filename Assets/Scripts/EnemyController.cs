@@ -1,18 +1,20 @@
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Controller
 {
-    [SerializeField] private int hp;
-    [SerializeField] private int damage;
+   
+    [SerializeField] private float cooldown;
     [SerializeField] private int coins;
-    private Animator animator;
+    private float timerCooldown = 0;
+    bool battle = false;
 
-    public int Hp => hp;
-    public int Damage => damage;
     public int Coins => coins;
 
-    public void Awake() 
+    public void Instance(PlayerController playerController) 
     {
-        animator = GetComponent<Animator>();
+        targetController = playerController; 
     }
+
+
+    IEnumerator
 }
