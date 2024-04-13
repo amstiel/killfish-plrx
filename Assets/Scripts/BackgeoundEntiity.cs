@@ -8,6 +8,7 @@ public class BackgeoundEntiity : ScriptableObject
 {
     public Vector2Int frames = new Vector2Int(-1, -1);
     public int chance = 10;
+    public bool isSpesial = false;
     public GameObject prefab;
     // Start is called before the first frame update
     void Start()

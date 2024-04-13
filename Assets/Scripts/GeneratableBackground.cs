@@ -31,6 +31,12 @@ public class GeneratableBackground : BackgroundNode {
         foreach (BackgeoundEntiity config in _configs) {
             if ((config.frames[0] == -1 || config.frames[0] >= WorldInfo.Instance().globalFrame) &&
                 (config.frames[1] == -1 || config.frames[1] <= WorldInfo.Instance().globalFrame)) {
+                if (config.isSpesial) {
+                    currentConfigs.Clear();
+                    currentConfigs.Add(config);
+                    maxRand = 0;
+                    break;
+                }
                 currentConfigs.Add(config);
                 maxRand += config.chance;
             }
