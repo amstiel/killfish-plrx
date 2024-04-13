@@ -26,13 +26,11 @@ public class BackgroundStaticNode : BackgroundNode
     }
 
     private void CheckMove() {
-        Renderer renderer = _backgroundSprites[_currentBackgroundIndex];
-        
-        while (!IsRenderOnScreen(renderer)) 
+        while (!IsRenderOnScreen(_backgroundSprites[_currentBackgroundIndex])) 
         {
             Vector3 nextRendererPosition = _backgroundSprites[(_currentBackgroundIndex + _backgroundSprites.Count - 1) % _backgroundSprites.Count].transform.position;
             Renderer prevRenderer = _backgroundSprites[_backgroundSprites.Count - 1];
-            renderer.transform.position = nextRendererPosition + new Vector3(prevRenderer.bounds.size.x, 0.0f, 0.0f);
+            _backgroundSprites[_currentBackgroundIndex].transform.position = nextRendererPosition + new Vector3(prevRenderer.bounds.size.x, 0.0f, 0.0f);
             _currentBackgroundIndex = (_currentBackgroundIndex + 1) % _backgroundSprites.Count;
         }
     }

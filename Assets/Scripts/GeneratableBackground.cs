@@ -28,7 +28,7 @@ public class GeneratableBackground : BackgroundNode {
     }
 
     bool IsRenderOnScreen(Renderer renderer) {
-        return GeometryUtility.TestPlanesAABB(_cameraPlane, renderer.bounds);
+        return GeometryUtility.TestPlanesAABB(GeometryUtility.CalculateFrustumPlanes(mainCamera), renderer.bounds);
     }
     private void CheckAdd() {
         while (_entities.Count == 0 || IsRenderOnScreen(_entities[_entities.Count - 1].Item2) ) {
@@ -42,16 +42,16 @@ public class GeneratableBackground : BackgroundNode {
             }
 
             Renderer obj = null;
-            if (_invisibleEntities.ContainsKey(_configs[index].prefab.name) && _invisibleEntities[_configs[index].prefab.name].Count != 0) {
+                if (_invisibleEntities.ContainsKey(_configs[index].prefab.name) && _invisibleEntities[_configs[index].prefab.name].Count != 0) {
                 obj = _invisibleEntities[_configs[index].prefab.name][0];
                 _invisibleEntities[_configs[index].prefab.name].RemoveAt(0);
             }
             else {
-                obj = Instantiate(_configs[index].prefab, transform).GetComponent<Renderer>();
+                 obj = Instantiate(_configs[index].prefab, transform).GetComponent<Renderer>();
             }
 
             obj.transform.position = _entities[_entities.Count - 1].Item2.transform.position +
-                    new Vector3(_entities[_entities.Count - 1].Item2.bounds.size.x, 0.0f, 0.0f);
+                    new Vector3(_entities[_entities.Count - 1].Item2.bounds.size.x / 2.0f + obj.bounds.size.x / 2, 0.0f, 0.0f);
             _entities.Add(new Tuple<string, Renderer>(_configs[index].prefab.name, obj));
         }
     }

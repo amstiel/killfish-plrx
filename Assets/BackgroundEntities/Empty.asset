@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frames: {x: 0, y: 0}
   chance: 10
-  prefab: {fileID: 882034253067276478, guid: a11e89f26eb844a4fbf0a82f7de4a37c, type: 3}
+  prefab: {fileID: 882034253067276478, guid: 174fc5184b7d21e4b87276725e97a880, type: 3}
