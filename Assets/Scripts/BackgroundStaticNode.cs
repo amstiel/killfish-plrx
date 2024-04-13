@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackgroundNode : MonoBehaviour
+public class BackgroundStaticNode : BackgroundNode
 {
     public float speed = 0.1f;
     public GameObject backgroundPrefab;
@@ -37,7 +37,7 @@ public class BackgroundNode : MonoBehaviour
         }
     }
 
-    public void SetCamera(Camera camera) {
+    public override void SetCamera(Camera camera) {
         mainCamera = camera;
     }
 
@@ -60,11 +60,11 @@ public class BackgroundNode : MonoBehaviour
 
         CheckMove();
     }
-    public void StartScroll() {
+    public override void StartScroll() {
         _scrolling = true;
     }
 
-    public void StopScroll() {
+    public override void StopScroll() {
         _scrolling = false;
     }
 }
