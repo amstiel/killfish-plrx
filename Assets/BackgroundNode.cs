@@ -10,14 +10,14 @@ public class BackgroundNode : MonoBehaviour
     [HideInInspector]
     public Camera mainCamera;
 
-    private List<GameObject> _backgroundSprites = new List<GameObject>();
+    private List<Renderer> _backgroundSprites = new List<Renderer>();
     private bool _scrolling = false;
     private int _currentBackgroundIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        _backgroundSprites.Add(Instantiate(backgroundPrefab, transform));
+        _backgroundSprites.Add(Instantiate(backgroundPrefab, transform).GetComponent<Renderer>());
         CheckAdd();
     }
 
@@ -26,10 +26,13 @@ public class BackgroundNode : MonoBehaviour
     }
 
     private void CheckMove() {
-        while (!IsRenderOnScreen(_backgroundSprites[_currentBackgroundIndex].GetComponent<Renderer>())) {
-            _backgroundSprites[_currentBackgroundIndex].transform.position = 
-                _backgroundSprites[(_currentBackgroundIndex + _backgroundSprites.Count - 1) % _backgroundSprites.Count].transform.position +
-                new Vector3(_backgroundSprites[_backgroundSprites.Count - 1].GetComponent<Renderer>().bounds.size.x, 0.0f, 0.0f);
+        Renderer renderer = _backgroundSprites[_currentBackgroundIndex];
+        
+        while (!IsRenderOnScreen(renderer)) 
+        {
+            Vector3 nextRendererPosition = _backgroundSprites[(_currentBackgroundIndex + _backgroundSprites.Count - 1) % _backgroundSprites.Count].transform.position;
+            Renderer prevRenderer = _backgroundSprites[_backgroundSprites.Count - 1];
+            renderer.transform.position = nextRendererPosition + new Vector3(prevRenderer.bounds.size.x, 0.0f, 0.0f);
             _currentBackgroundIndex = (_currentBackgroundIndex + 1) % _backgroundSprites.Count;
         }
     }
@@ -39,9 +42,9 @@ public class BackgroundNode : MonoBehaviour
     }
 
     private void CheckAdd() {
-        while (IsRenderOnScreen(_backgroundSprites[_backgroundSprites.Count - 1].GetComponent<Renderer>())) {
+        while (IsRenderOnScreen(_backgroundSprites[_backgroundSprites.Count - 1])) {
             _backgroundSprites.Add(Instantiate(backgroundPrefab, _backgroundSprites[_backgroundSprites.Count - 1].transform.position +
-                new Vector3(_backgroundSprites[_backgroundSprites.Count - 1].GetComponent<Renderer>().bounds.size.x, 0.0f, 0.0f), new Quaternion(), transform));
+                new Vector3(_backgroundSprites[_backgroundSprites.Count - 1].bounds.size.x, 0.0f, 0.0f), new Quaternion(), transform).GetComponent<Renderer>());
         }
     }
     // Update is called once per frame
@@ -51,7 +54,7 @@ public class BackgroundNode : MonoBehaviour
             return; 
         }
 
-        foreach (GameObject sprite in _backgroundSprites) {
+        foreach (Renderer sprite in _backgroundSprites) {
             sprite.transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);
         }
 
