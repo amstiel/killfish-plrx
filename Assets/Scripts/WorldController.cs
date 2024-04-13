@@ -46,7 +46,10 @@ public class WorldController : MonoBehaviour
     }
 
     void FigthUpdate() {
-    
+        if (isMoving) {
+            _timer = 0.0f;
+            endMove.Invoke();
+        }
     }
     // Update is called once per frame
     void Update()

@@ -13,16 +13,15 @@ public class BackgroundStaticNode : BackgroundNode
     private List<Renderer> _backgroundSprites = new List<Renderer>();
     private bool _scrolling = false;
     private int _currentBackgroundIndex = 0;
+    private Plane[] _cameraPlane;
 
     // Start is called before the first frame update
     void Start()
     {
-        _backgroundSprites.Add(Instantiate(backgroundPrefab, transform).GetComponent<Renderer>());
-        CheckAdd();
     }
 
     bool IsRenderOnScreen(Renderer renderer) {
-        return GeometryUtility.TestPlanesAABB(GeometryUtility.CalculateFrustumPlanes(mainCamera), renderer.bounds);
+        return GeometryUtility.TestPlanesAABB(_cameraPlane, renderer.bounds);
     }
 
     private void CheckMove() {
@@ -37,12 +36,19 @@ public class BackgroundStaticNode : BackgroundNode
 
     public override void SetCamera(Camera camera) {
         mainCamera = camera;
+        _cameraPlane = GeometryUtility.CalculateFrustumPlanes(mainCamera);
+        CheckAdd();
     }
 
     private void CheckAdd() {
-        while (IsRenderOnScreen(_backgroundSprites[_backgroundSprites.Count - 1])) {
-            _backgroundSprites.Add(Instantiate(backgroundPrefab, _backgroundSprites[_backgroundSprites.Count - 1].transform.position +
-                new Vector3(_backgroundSprites[_backgroundSprites.Count - 1].bounds.size.x, 0.0f, 0.0f), new Quaternion(), transform).GetComponent<Renderer>());
+        while (_backgroundSprites.Count == 0 || IsRenderOnScreen(_backgroundSprites[_backgroundSprites.Count - 1])) {
+            if (_backgroundSprites.Count == 0) {
+                _backgroundSprites.Add(Instantiate(backgroundPrefab, transform).GetComponent<Renderer>());
+            }
+            else {
+                _backgroundSprites.Add(Instantiate(backgroundPrefab, _backgroundSprites[_backgroundSprites.Count - 1].transform.position +
+                    new Vector3(_backgroundSprites[_backgroundSprites.Count - 1].bounds.size.x, 0.0f, 0.0f), new Quaternion(), transform).GetComponent<Renderer>());
+            }
         }
     }
     // Update is called once per frame

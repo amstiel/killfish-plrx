@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee40282e97da0ce42ae7fcd88d5d9bc6, type: 3}
   m_Name: Empty
   m_EditorClassIdentifier: 
-  frames: {x: 0, y: 0}
+  frames: {x: -1, y: -1}
   chance: 10
   prefab: {fileID: 882034253067276478, guid: 174fc5184b7d21e4b87276725e97a880, type: 3}

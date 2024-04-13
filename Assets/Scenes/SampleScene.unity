@@ -309,6 +309,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f499a3bd98b84745a64f6179deae90e, type: 2}
   - {fileID: 11400000, guid: 1c4f665da15bea044a35d51b83515e71, type: 2}
   - {fileID: 11400000, guid: 9a9e8eca80249bb4cbab3ba464e5cec3, type: 2}
+  empty: {fileID: 11400000, guid: 1c4f665da15bea044a35d51b83515e71, type: 2}
   speed: 3
 --- !u!1 &1613462438
 GameObject:

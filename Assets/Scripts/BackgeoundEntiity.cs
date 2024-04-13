@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/BackgeoundEntiityScriptableObject", order = 1)]
 public class BackgeoundEntiity : ScriptableObject
 {
-    public Vector2Int frames;
+    public Vector2Int frames = new Vector2Int(-1, -1);
     public int chance = 10;
     public GameObject prefab;
     // Start is called before the first frame update
