@@ -386,6 +386,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1157920722}
+    - target: {fileID: 4636977101327529999, guid: 8b13c18addc1af24ead902862842af84, type: 3}
+      propertyPath: empty
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c4f665da15bea044a35d51b83515e71, type: 2}
     - target: {fileID: 8392815087424415180, guid: 8b13c18addc1af24ead902862842af84, type: 3}
       propertyPath: m_Name
       value: BackgroundScroller
