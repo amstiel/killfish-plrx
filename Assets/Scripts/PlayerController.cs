@@ -3,8 +3,6 @@ using UnityEngine;
 public class PlayerController : Controller
 {
     [SerializeField] private float moveTime;
-    [SerializeField] private EnemyController enemyTarget;
-    private Animator animator; 
 
 
     private void Awake()
@@ -21,13 +19,11 @@ public class PlayerController : Controller
         animator.SetTrigger("stoptMove");
     }
 
-    public void SetEnemyTarget(EnemyController enemy) 
+    private void Update()
     {
-        enemyTarget = enemy;
-    }
-
-    private void Attack() 
-    {
-        enemyTarget.SetDamage(damage);
+        if (Input.GetKeyDown(KeyCode.Space) && targetController != null) 
+        {
+            Attack();
+        }
     }
 }

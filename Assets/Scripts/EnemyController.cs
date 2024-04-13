@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyController : Controller
@@ -5,16 +6,32 @@ public class EnemyController : Controller
    
     [SerializeField] private float cooldown;
     [SerializeField] private int coins;
-    private float timerCooldown = 0;
-    bool battle = false;
 
     public int Coins => coins;
 
-    public void Instance(PlayerController playerController) 
+    public override void SetTargetController(Controller target) 
     {
-        targetController = playerController; 
+        base.SetTargetController(target);
+        StartCoroutine(StartTimerAttack());
     }
 
+    public override void EndBattle()
+    {
+        base.EndBattle();
+        StopAllCoroutines();
+    }
 
-    IEnumerator
+    protected override void Attack()
+    {
+        base.Attack();
+    }
+
+    private IEnumerator StartTimerAttack() 
+    {
+        while (WorldInfo.Instance().gameState == WorldInfo.GameState.Fight) 
+        {
+            Attack();
+            yield return new WaitForSeconds(cooldown);
+        } 
+    }
 }

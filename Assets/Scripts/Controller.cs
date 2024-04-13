@@ -1,28 +1,33 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Controller : MonoBehaviour
 {
     [SerializeField] protected int hp;
     [SerializeField] protected int damage;
-    protected WorldInfo worldInfo;
+    public UnityEvent deadEvent;
     protected Animator animator;
     protected Controller targetController;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        worldInfo = WorldInfo.Instance();
     }
 
     protected virtual void Attack()
     {
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("attack");
         targetController.SetDamage(damage);
     }
 
-    protected void SetTargetController(Controller controller) 
+    public virtual void SetTargetController(Controller controller)
     {
         targetController = controller;
+    }
+
+    public virtual void EndBattle()
+    {
+        targetController = null;
     }
 
     public void SetDamage(int damage)
@@ -38,6 +43,7 @@ public class Controller : MonoBehaviour
 
     protected void Dead()
     {
-
+        deadEvent.Invoke();
+        deadEvent.RemoveAllListeners();
     }
 }
