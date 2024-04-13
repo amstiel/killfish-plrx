@@ -6,12 +6,6 @@ using UnityEngine.Events;
 
 public class WorldController : MonoBehaviour
 {
-    private enum GameState {
-        Start,
-        Moving,
-        Fight
-    }
-
     public UnityEvent startMove;
     public UnityEvent endMove;
     public float stepTime = 0.5f;
@@ -21,12 +15,11 @@ public class WorldController : MonoBehaviour
     }
 
     private float _timer = 0.0f;
-    private GameState _currentState = GameState.Start;
 
     // Start is called before the first frame update
     void Start()
     {
-        _currentState = GameState.Moving;
+        WorldInfo.Instance().SetState(WorldInfo.GameState.Moving);
     }
 
     void StartUpdate() { 
@@ -38,7 +31,8 @@ public class WorldController : MonoBehaviour
         _timer = Math.Max(0, _timer - Time.deltaTime);
 
         if (_timer < trashHold && spacePressed) {
-            _timer = stepTime;
+            _timer += stepTime;
+            WorldInfo.Instance().IncGlobalFrame();
         }
 
         if (oldIsMoving != isMoving) {
@@ -57,14 +51,14 @@ public class WorldController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (_currentState) {
-            case GameState.Start:
+        switch (WorldInfo.Instance().gameState) {
+            case WorldInfo.GameState.Start:
                 StartUpdate();
                 break;
-            case GameState.Moving:
+            case WorldInfo.GameState.Moving:
                 MoveUpdate();
                 break;
-            case GameState.Fight:
+            case WorldInfo.GameState.Fight:
                 FigthUpdate();
                 break;
         }
