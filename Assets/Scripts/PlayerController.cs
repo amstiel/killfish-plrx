@@ -16,7 +16,7 @@ public class PlayerController : Controller
     }
     public void StopMove()
     {
-        animator.SetTrigger("stoptMove");
+        animator.SetTrigger("stopMove");
     }
 
     private void Update()

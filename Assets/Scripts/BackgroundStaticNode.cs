@@ -47,7 +47,7 @@ public class BackgroundStaticNode : BackgroundNode
             }
             else {
                 _backgroundSprites.Add(Instantiate(backgroundPrefab, _backgroundSprites[_backgroundSprites.Count - 1].transform.position +
-                    new Vector3(_backgroundSprites[_backgroundSprites.Count - 1].bounds.size.x, 0.0f, 0.0f), new Quaternion(), transform).GetComponent<Renderer>());
+                    new Vector3(_backgroundSprites[_backgroundSprites.Count - 1].bounds.size.x - 0.02f, 0.0f, 0.0f), new Quaternion(), transform).GetComponent<Renderer>());
             }
         }
     }
@@ -63,6 +63,7 @@ public class BackgroundStaticNode : BackgroundNode
         }
 
         CheckMove();
+        CheckAdd();
     }
     public override void StartScroll() {
         _scrolling = true;

@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frames: {x: -1, y: -1}
   chance: 10
+  isSpesial: 0
   prefab: {fileID: 882034253067276478, guid: a11e89f26eb844a4fbf0a82f7de4a37c, type: 3}
+  sprite: {fileID: 5354429476588687777, guid: 5127b84a9c21ec14f98850aff505deff, type: 3}

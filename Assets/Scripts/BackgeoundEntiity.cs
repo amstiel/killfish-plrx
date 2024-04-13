@@ -10,15 +10,5 @@ public class BackgeoundEntiity : ScriptableObject
     public int chance = 10;
     public bool isSpesial = false;
     public GameObject prefab;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Sprite sprite;
 }
