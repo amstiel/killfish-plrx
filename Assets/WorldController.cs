@@ -9,6 +9,7 @@ public class WorldController : MonoBehaviour
     public UnityEvent startMove;
     public UnityEvent endMove;
     public float stepTime = 0.5f;
+    public float trashHold = 0.1f;
     public bool isMoving {
         get{ return timer > 0.0f; }
     }
@@ -28,7 +29,7 @@ public class WorldController : MonoBehaviour
         bool spacePressed = Input.GetKeyDown("space");
         timer = Math.Max(0, timer - Time.deltaTime);
 
-        if (timer == 0.0f && spacePressed) {
+        if (timer < trashHold && spacePressed) {
             timer = stepTime;
         }
 
