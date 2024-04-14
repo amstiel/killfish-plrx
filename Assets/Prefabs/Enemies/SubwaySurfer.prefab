@@ -307,8 +307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec8eb79eab7c4940b7e82d2fa091a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 60
-  damage: 3
+  hp: 80
+  damage: 5
   armor: 0
   coins: 20
   textDamagePref: {fileID: 6256233040568908986, guid: 59c68c46a59316d42a70e7d7e61b018a, type: 3}
@@ -316,7 +316,7 @@ MonoBehaviour:
   deadEvent:
     m_PersistentCalls:
       m_Calls: []
-  cooldown: 2
+  cooldown: 1
   textRenderer: {fileID: 8309646385690777473}
 --- !u!114 &8309646385690777473
 MonoBehaviour:
