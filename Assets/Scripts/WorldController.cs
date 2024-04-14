@@ -19,7 +19,7 @@ public class WorldController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        WorldInfo.Instance().SetState(WorldInfo.GameState.Moving);
+        WorldInfo.Instance().SetState(WorldInfo.GameState.Start);
     }
 
     void StartUpdate() { 
