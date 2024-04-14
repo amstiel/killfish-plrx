@@ -7,7 +7,6 @@ public class EnemyController : CharactersController
    
     [SerializeField] private float cooldown;
     [SerializeField] private DialogTextRenderer textRenderer;
-    public Animation deadAnim;
 
     public override void SetTargetController(CharactersController target) 
     {
@@ -46,9 +45,12 @@ public class EnemyController : CharactersController
     {
         PlayerController playerController = (PlayerController)targetController;
         playerController.AddCoins(coins);
-        deadAnim.Play();
         base.Dead();
+    }
 
+    public void Destroy() 
+    {
+        animator.SetTrigger("dead");
     }
 
     private IEnumerator StartTimerAttack() 

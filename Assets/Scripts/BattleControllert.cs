@@ -24,7 +24,6 @@ public class BattleController : MonoBehaviour
     private void EndDialogue()
     {
         WorldInfo.Instance().SetState(WorldInfo.GameState.Moving);
-        eventSpeechEnd.RemoveAllListeners();
         speachRenderer.SetActive(false);
     }
 
@@ -44,6 +43,7 @@ public class BattleController : MonoBehaviour
         speachRenderer.SetActive(true);
         enemyController.StartAfterDeathDialogue(speachRenderer);
         eventSpeechEnd.AddListener(EndDialogue);
+        eventSpeechEnd.AddListener(Destroyer);
 
         if (enemyController != null)
         {
@@ -51,5 +51,15 @@ public class BattleController : MonoBehaviour
         }
         playerController.EndBattle();
         WorldInfo.Instance().SetState(WorldInfo.GameState.Speaking);
+    }
+
+    public void Destroyer()
+    {
+        if (enemyController != null && playerController.Hp > 0)
+        {
+            enemyController.Destroy();
+            eventSpeechEnd.RemoveAllListeners();
+        }
+
     }
 }

@@ -318,7 +318,6 @@ MonoBehaviour:
       m_Calls: []
   cooldown: 2
   textRenderer: {fileID: 8309646385690777473}
-  deadAnim: {fileID: 2577857710996820998}
 --- !u!114 &8309646385690777473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,7 +578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 426390, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.23
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 426390, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
       propertyPath: m_LocalPosition.z

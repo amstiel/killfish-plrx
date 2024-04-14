@@ -17,6 +17,7 @@ public class CharactersController : MonoBehaviour
     protected CharactersController targetController;
 
     public int Coins { get => coins;}
+    public int Hp { get => hp;}
 
     protected virtual void Awake()
     {
