@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +8,8 @@ public class DialogTextRenderer : MonoBehaviour
 {
     public string textToRender;
     public string finalTextToRender;
-    public float textSpeed = 0.1f;
-    public int maxCharsInBubble = 42;
+    private float textSpeed = 0.04f;
+    private int maxCharsInBubble = 42;
     public UnityEvent spechEndEvent;
 
     public Vector2 offset = new Vector2(-125, 100);
