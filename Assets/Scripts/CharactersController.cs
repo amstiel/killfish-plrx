@@ -51,7 +51,7 @@ public class CharactersController : MonoBehaviour
         PopupController.Instance().ShowPopup(transform, 
             new PopupConfig().
                 Text(damage.ToString()).
-                Offset(Vector2.zero).
+                Offset(new Vector2(0, 100)).
                 Duration(1.0f).
                 Color(Color.red).
                 Type(PopupConfig.PopupType.Damage));
