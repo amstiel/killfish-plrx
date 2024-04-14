@@ -58,7 +58,7 @@ public class GeneratableBackground : BackgroundNode
         {
             int rand = UnityEngine.Random.Range(0, maxRand);
             int index = 0;
-            for (; currentConfigs[index].chance < rand; index++, rand -= currentConfigs[index].chance) ;
+            for (; (index < currentConfigs.Count - 1) && currentConfigs[index].chance < rand; index++, rand -= currentConfigs[index].chance) ;
 
             if (currentConfigs[index].isSpesial) {
                 currentConfigs[index].chance = 0;
