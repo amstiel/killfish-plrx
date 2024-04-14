@@ -11,7 +11,8 @@ public class GeneratableBackground : BackgroundNode
     public List<BackgeoundEntiity> _configs = new List<BackgeoundEntiity>();
     public BackgeoundEntiity empty;
     public float speed = 1.0f;
-    public int counter = 0;
+    public bool isMain = false;
+    static public int counter = 0;
 
     private List<Tuple<string, SpriteRenderer>> _entities = new List<Tuple<string, SpriteRenderer>>();
     private Dictionary<string, List<SpriteRenderer>> _invisibleEntities = new Dictionary<string, List<SpriteRenderer>>();
@@ -57,7 +58,9 @@ public class GeneratableBackground : BackgroundNode
 
         while (_entities.Count == 0 || IsRenderOnScreen(_entities[_entities.Count - 1].Item2))
         {
-            counter++;
+            if (isMain) {
+                counter++;
+            }
             int rand = UnityEngine.Random.Range(0, maxRand);
             int index = 0;
             for (; (index < currentConfigs.Count - 1) && currentConfigs[index].chance < rand; index++, rand -= currentConfigs[index].chance) ;
