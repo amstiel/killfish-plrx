@@ -25,6 +25,7 @@ public class BattleController : MonoBehaviour
     {
         WorldInfo.Instance().SetState(WorldInfo.GameState.Moving);
         eventSpeechEnd.RemoveAllListeners();
+        speachRenderer.SetActive(false);
     }
 
     private void StartBattle(EnemyController enemyController, PlayerController playerController)

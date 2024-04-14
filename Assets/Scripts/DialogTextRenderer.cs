@@ -62,6 +62,7 @@ public class DialogTextRenderer : MonoBehaviour
     }
 
     void splitTextToChunks() {
+        textChunks.Clear();
         for (int i = 0; i < textToRender.Length; i += maxCharsInBubble) {
             string chunk = textToRender.Substring(i, Mathf.Min(maxCharsInBubble, textToRender.Length - i));
             
@@ -89,7 +90,7 @@ public class DialogTextRenderer : MonoBehaviour
         StartCoroutine(RenderText(textChunks[0]));
     }
 
-    public void StartFinalText(){
+    public void StartFinalText() {
         textToRender = finalTextToRender;
         StartTextRender();
     }
