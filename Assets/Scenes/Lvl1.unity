@@ -458,6 +458,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 176704587101626394, guid: 8b13c18addc1af24ead902862842af84, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.66
+      objectReference: {fileID: 0}
     - target: {fileID: 3918730106575276332, guid: 8b13c18addc1af24ead902862842af84, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.99
@@ -502,6 +506,26 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1157920722}
+    - target: {fileID: 4636977101327529999, guid: 8b13c18addc1af24ead902862842af84, type: 3}
+      propertyPath: _configs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636977101327529999, guid: 8b13c18addc1af24ead902862842af84, type: 3}
+      propertyPath: '_configs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a9e8eca80249bb4cbab3ba464e5cec3, type: 2}
+    - target: {fileID: 4636977101327529999, guid: 8b13c18addc1af24ead902862842af84, type: 3}
+      propertyPath: '_configs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 721e0fb5c8ef5764d9690874681048f3, type: 2}
+    - target: {fileID: 4636977101327529999, guid: 8b13c18addc1af24ead902862842af84, type: 3}
+      propertyPath: '_configs.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c669eacb745d4241abfcee2a9916688, type: 2}
+    - target: {fileID: 4636977101327529999, guid: 8b13c18addc1af24ead902862842af84, type: 3}
+      propertyPath: '_configs.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 07b8367d553ac7744bb9847b676f1efd, type: 2}
     - target: {fileID: 8392815087424415180, guid: 8b13c18addc1af24ead902862842af84, type: 3}
       propertyPath: m_Name
       value: BackgroundScroller
