@@ -12,7 +12,7 @@ public class GeneratableBackground : BackgroundNode
     public BackgeoundEntiity empty;
     public float speed = 1.0f;
     public bool isMain = false;
-    static public int counter = 0;
+    static public int counter = 10;
 
     private List<Tuple<string, SpriteRenderer>> _entities = new List<Tuple<string, SpriteRenderer>>();
     private Dictionary<string, List<SpriteRenderer>> _invisibleEntities = new Dictionary<string, List<SpriteRenderer>>();
