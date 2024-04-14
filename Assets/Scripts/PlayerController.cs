@@ -28,6 +28,22 @@ public class PlayerController : CharactersController
         animator.SetTrigger("stopMove");
     }
 
+    public void HealHp(int hp) 
+    {
+        this.hp+= hp;
+        if (this.hp > maxHp) 
+        {
+            this.hp = maxHp;
+        }
+        UpdateUI();
+    }
+
+    public void AddMaxHp(int maxHp) 
+    {
+        this.maxHp+= maxHp;
+        UpdateUI();
+    }
+
     public void AddDamage(int damage) 
     {
         this.damage+= damage;

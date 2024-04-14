@@ -36,7 +36,13 @@ public class BattleController : MonoBehaviour
     private void StartFriendsDialogue()
     {
         WorldInfo.Instance().SetState(WorldInfo.GameState.Speaking);
-        eventSpeechEnd = enemyController.StartDialogue(speachRenderer);
+        friendController.SetTargetController(playerController);
+        eventSpeechEnd = friendController.StartDialogue(speachRenderer);
+        eventSpeechEnd.AddListener(() => {
+            friendController.GiveBonusToPlayer();
+            EndDialogue();
+            Destroyer();
+        });
         speachRenderer.SetActive(true);
     }
     private void EndDialogue()
@@ -79,5 +85,9 @@ public class BattleController : MonoBehaviour
             eventSpeechEnd.RemoveAllListeners();
         }
 
+        if (friendController != null)
+        {
+            eventSpeechEnd.RemoveAllListeners();
+        }
     }
 }
