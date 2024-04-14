@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 6761081776211022886}
   - component: {fileID: 2577857710996820998}
   m_Layer: 0
-  m_Name: Enemy 1
+  m_Name: Bear
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,16 +307,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec8eb79eab7c4940b7e82d2fa091a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 30
   damage: 1
   armor: 0
-  coins: 100
+  coins: 10
   textDamagePref: {fileID: 6256233040568908986, guid: 59c68c46a59316d42a70e7d7e61b018a, type: 3}
   textSpawnPoint: {fileID: 2933988781379419411}
   deadEvent:
     m_PersistentCalls:
       m_Calls: []
-  cooldown: 2
+  cooldown: 1
   textRenderer: {fileID: 8309646385690777473}
 --- !u!114 &8309646385690777473
 MonoBehaviour:
@@ -339,7 +339,7 @@ MonoBehaviour:
   spechEndEvent:
     m_PersistentCalls:
       m_Calls: []
-  offset: {x: -250, y: 200}
+  offset: {x: -250, y: 400}
   textRendererObject: {fileID: 0}
 --- !u!212 &4670104792931097853
 SpriteRenderer:
@@ -433,7 +433,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 6.6666665, y: 6.6666665}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -533,7 +533,7 @@ SpriteRenderer:
   m_SortingLayerID: 1228982071
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1915776564401465818, guid: 69c172581a33d4047a64873bc5e6dc80, type: 3}
+  m_Sprite: {fileID: 4693792977596894205, guid: 35c1ff130cd05ac41ba59767b87f8060, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
