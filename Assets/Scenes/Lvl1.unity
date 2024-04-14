@@ -855,7 +855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1982810840}
-  speachRenderer: {fileID: 2103739035}
+  speachRenderer: {fileID: 0}
 --- !u!4 &1228386233
 Transform:
   m_ObjectHideFlags: 0
@@ -933,10 +933,6 @@ PrefabInstance:
     - target: {fileID: 1928605967893466136, guid: aee3b6dc9b45b4496bf1ef3d2d150bc6, type: 3}
       propertyPath: m_ScaleFactor
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2260570845560739974, guid: aee3b6dc9b45b4496bf1ef3d2d150bc6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2405113366660335884, guid: aee3b6dc9b45b4496bf1ef3d2d150bc6, type: 3}
       propertyPath: m_Pivot.x
@@ -1024,7 +1020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7783895863174920757, guid: aee3b6dc9b45b4496bf1ef3d2d150bc6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1621,11 +1617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2103739035 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2260570845560739974, guid: aee3b6dc9b45b4496bf1ef3d2d150bc6, type: 3}
-  m_PrefabInstance: {fileID: 1673535392}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1638,3 +1629,4 @@ SceneRoots:
   - {fileID: 344247896}
   - {fileID: 1673535392}
   - {fileID: 1228386233}
+  - {fileID: 733664379}

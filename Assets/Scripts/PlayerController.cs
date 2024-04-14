@@ -11,6 +11,7 @@ public class PlayerController : CharactersController
     private void Start()
     {
         UpdateUI();
+
     }
 
     public override void ReceiveDamage(int damage)

@@ -45,9 +45,16 @@ public class CharactersController : MonoBehaviour
     {
         int newDamage = damage - armor;
 
-        Text text = Instantiate(textDamagePref, textSpawnPoint);
+        //Text text = Instantiate(textDamagePref, textSpawnPoint);
 
-        text.text = damage.ToString();  
+        //text.text = damage.ToString();  
+        PopupController.Instance().ShowPopup(transform, 
+            new PopupConfig().
+                Text(damage.ToString()).
+                Offset(Vector2.zero).
+                Duration(1.0f).
+                Color(Color.red).
+                Type(PopupConfig.PopupType.Damage));
 
         if (newDamage>0)
             hp -= damage;
