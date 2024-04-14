@@ -2008,7 +2008,7 @@ PrefabInstance:
       objectReference: {fileID: 811704218}
     - target: {fileID: 4643034822533838177, guid: 015f5a9f3dc750a4ea47113b2492d0b1, type: 3}
       propertyPath: hp
-      value: 4
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4643034822533838177, guid: 015f5a9f3dc750a4ea47113b2492d0b1, type: 3}
       propertyPath: hpUI
