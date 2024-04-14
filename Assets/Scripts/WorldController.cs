@@ -55,13 +55,12 @@ public class WorldController : MonoBehaviour
     void Update()
     {
         switch (WorldInfo.Instance().gameState) {
-            case WorldInfo.GameState.Start:
-                StartUpdate();
-                break;
             case WorldInfo.GameState.Moving:
                 MoveUpdate();
                 break;
+            case WorldInfo.GameState.Start:
             case WorldInfo.GameState.Fight:
+            case WorldInfo.GameState.Speaking:
                 FigthUpdate();
                 break;
         }
