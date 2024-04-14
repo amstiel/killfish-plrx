@@ -120,8 +120,8 @@ TextureImporter:
         y: 0
         width: 524
         height: 960
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,14 +136,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4a5b3b5930af24542a2a3f5eb9cee8b5
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Buhmans_0: 8195258480548781094
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
