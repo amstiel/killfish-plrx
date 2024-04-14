@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee40282e97da0ce42ae7fcd88d5d9bc6, type: 3}
   m_Name: Frog
   m_EditorClassIdentifier: 
-  frames: {x: 32, y: 35}
+  frames: {x: 37, y: 39}
   chance: 1
   isSpesial: 1
   prefab: {fileID: 6352387502079319264, guid: 21640028034d9994882872d695ee8a4e, type: 3}

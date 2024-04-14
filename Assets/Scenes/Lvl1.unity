@@ -647,32 +647,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6366983427140968633, guid: 8b13c18addc1af24ead902862842af84, type: 3}
       propertyPath: _configs.Array.size
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6366983427140968633, guid: 8b13c18addc1af24ead902862842af84, type: 3}
       propertyPath: '_configs.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 362fe7c987c904ee7b2e998510a38dc6, type: 2}
+      objectReference: {fileID: 11400000, guid: 0fe0034f3506c54448a5aa3b8a31046f, type: 2}
     - target: {fileID: 6366983427140968633, guid: 8b13c18addc1af24ead902862842af84, type: 3}
       propertyPath: '_configs.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 4dba68a33f529430ca80d8553cb40637, type: 2}
+      objectReference: {fileID: 11400000, guid: a010efdbf6a845e4da65f6234e17f59e, type: 2}
     - target: {fileID: 6366983427140968633, guid: 8b13c18addc1af24ead902862842af84, type: 3}
       propertyPath: '_configs.Array.data[2]'
       value: 
-      objectReference: {fileID: 11400000, guid: a010efdbf6a845e4da65f6234e17f59e, type: 2}
+      objectReference: {fileID: 11400000, guid: ac869a338daafe64989f6d498fc8499b, type: 2}
     - target: {fileID: 6366983427140968633, guid: 8b13c18addc1af24ead902862842af84, type: 3}
       propertyPath: '_configs.Array.data[3]'
       value: 
-      objectReference: {fileID: 11400000, guid: ac869a338daafe64989f6d498fc8499b, type: 2}
+      objectReference: {fileID: 11400000, guid: 7fcff50289735d74f89d13ee25f13f8a, type: 2}
     - target: {fileID: 6366983427140968633, guid: 8b13c18addc1af24ead902862842af84, type: 3}
       propertyPath: '_configs.Array.data[4]'
       value: 
-      objectReference: {fileID: 11400000, guid: 7fcff50289735d74f89d13ee25f13f8a, type: 2}
+      objectReference: {fileID: 11400000, guid: 362fe7c987c904ee7b2e998510a38dc6, type: 2}
     - target: {fileID: 6366983427140968633, guid: 8b13c18addc1af24ead902862842af84, type: 3}
       propertyPath: '_configs.Array.data[5]'
       value: 
-      objectReference: {fileID: 11400000, guid: 0fe0034f3506c54448a5aa3b8a31046f, type: 2}
+      objectReference: {fileID: 11400000, guid: a4c4d82d6f4803b43a86ac5c21602f94, type: 2}
+    - target: {fileID: 6366983427140968633, guid: 8b13c18addc1af24ead902862842af84, type: 3}
+      propertyPath: '_configs.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4dba68a33f529430ca80d8553cb40637, type: 2}
+    - target: {fileID: 6366983427140968633, guid: 8b13c18addc1af24ead902862842af84, type: 3}
+      propertyPath: '_configs.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a391da1a5ff37a84b9fe9c2a0ea91fab, type: 2}
+    - target: {fileID: 6366983427140968633, guid: 8b13c18addc1af24ead902862842af84, type: 3}
+      propertyPath: '_configs.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a1fac448fa982e44897db911ac8699a, type: 2}
     - target: {fileID: 7776223207920330686, guid: 8b13c18addc1af24ead902862842af84, type: 3}
       propertyPath: m_LocalPosition.y
       value: 7.4

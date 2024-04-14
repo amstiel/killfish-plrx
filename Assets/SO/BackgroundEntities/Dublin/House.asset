@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee40282e97da0ce42ae7fcd88d5d9bc6, type: 3}
   m_Name: House
   m_EditorClassIdentifier: 
-  frames: {x: 50, y: 100}
+  frames: {x: 75, y: 150}
   chance: 10
   isSpesial: 0
   prefab: {fileID: 882034253067276478, guid: a11e89f26eb844a4fbf0a82f7de4a37c, type: 3}

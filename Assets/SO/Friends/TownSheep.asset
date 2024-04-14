@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee40282e97da0ce42ae7fcd88d5d9bc6, type: 3}
   m_Name: TownSheep
   m_EditorClassIdentifier: 
-  frames: {x: 45, y: 50}
+  frames: {x: 58, y: 61}
   chance: 1
   isSpesial: 1
   prefab: {fileID: 6352387502079319264, guid: e1ae8143b9600a84ea4e26eb3f0bf4ca, type: 3}
