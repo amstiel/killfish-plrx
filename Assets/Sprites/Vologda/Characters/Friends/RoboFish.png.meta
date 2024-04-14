@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: da549e85fa7c542c3951ad2701c8a708
+guid: 0ef79fd4afc33ae43b1c30d3ef880e7c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5966648067383343243
-    second: bgbgbg_0
+      213: -5372880934330650568
+    second: RoboFish_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,22 +113,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bgbgbg_0
+      name: RoboFish_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2880
-        height: 1800
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 440
+        height: 820
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 57748d30235323da0800000000000000
-      internalID: -5966648067383343243
+      spriteID: 830b0c8c141bf65b0800000000000000
+      internalID: -5372880934330650568
       vertices: []
       indices: 
       edges: []
@@ -136,7 +136,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ffc11ed4c4b8c00448e9afa61816a501
     internalID: 0
     vertices: []
     indices: 
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bgbgbg_0: -5966648067383343243
+      RoboFish_0: -5372880934330650568
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
