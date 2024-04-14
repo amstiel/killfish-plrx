@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee40282e97da0ce42ae7fcd88d5d9bc6, type: 3}
-  m_Name: Bush
+  m_Name: Home1
   m_EditorClassIdentifier: 
-  frames: {x: 0, y: 50}
-  chance: 10
+  frames: {x: 50, y: 100}
+  chance: 5
   isSpesial: 0
   prefab: {fileID: 882034253067276478, guid: a11e89f26eb844a4fbf0a82f7de4a37c, type: 3}
-  sprite: {fileID: 6215267202064938543, guid: cf3aa1120334e4e4f8a76f3235c97318, type: 3}
+  sprite: {fileID: -855298285791758126, guid: 15963edbb33e00b4ba01432cd6abaa4a, type: 3}
