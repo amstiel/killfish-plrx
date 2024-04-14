@@ -526,6 +526,10 @@ PrefabInstance:
       propertyPath: '_configs.Array.data[6]'
       value: 
       objectReference: {fileID: 11400000, guid: 07b8367d553ac7744bb9847b676f1efd, type: 2}
+    - target: {fileID: 4880200069716480769, guid: 8b13c18addc1af24ead902862842af84, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.33
+      objectReference: {fileID: 0}
     - target: {fileID: 8392815087424415180, guid: 8b13c18addc1af24ead902862842af84, type: 3}
       propertyPath: m_Name
       value: BackgroundScroller

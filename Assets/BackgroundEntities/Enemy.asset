@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy
   m_EditorClassIdentifier: 
   frames: {x: 10, y: 15}
-  chance: 10
+  chance: 0
   isSpesial: 1
-  prefab: {fileID: 6352387502079319264, guid: fc88d2e71e0391e4e99c972b74135bb8, type: 3}
+  prefab: {fileID: 6352387502079319264, guid: 3367a2f69384cd14f858e09cfb011275, type: 3}
   sprite: {fileID: -7717450174661515925, guid: 5b9532b0525d11c45ad4c72c43f0f2f4, type: 3}
