@@ -3,7 +3,8 @@ public class WorldInfo {
     public enum GameState {
         Start,
         Moving,
-        Fight
+        Fight,
+        Speaking
     }
 
     private static WorldInfo instance;

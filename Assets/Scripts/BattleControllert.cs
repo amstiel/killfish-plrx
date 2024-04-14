@@ -16,17 +16,20 @@ public class BattleController : MonoBehaviour
 
     private void StartDialogue()
     {
+        WorldInfo.Instance().SetState(WorldInfo.GameState.Speaking);
         eventSpeechEnd = enemyController.StartDialogue(speachRenderer);
         eventSpeechEnd.AddListener(() => StartBattle(enemyController, playerController));
         speachRenderer.SetActive(true);
     }
     private void EndDialogue()
     {
+        WorldInfo.Instance().SetState(WorldInfo.GameState.Moving);
         eventSpeechEnd.RemoveAllListeners();
     }
 
     private void StartBattle(EnemyController enemyController, PlayerController playerController)
     {
+        eventSpeechEnd.RemoveAllListeners();
         WorldInfo.Instance().SetState(WorldInfo.GameState.Fight);
         enemyController.deadEvent.AddListener(EndBattle);
         playerController.deadEvent.AddListener(EndBattle);
@@ -36,11 +39,13 @@ public class BattleController : MonoBehaviour
 
     private void EndBattle()
     {
+        eventSpeechEnd.AddListener(EndDialogue);
+
         if (enemyController != null)
         {
             enemyController.EndBattle();
         }
         playerController.EndBattle();
-        WorldInfo.Instance().SetState(WorldInfo.GameState.Moving);
+        WorldInfo.Instance().SetState(WorldInfo.GameState.Speaking);
     }
 }
