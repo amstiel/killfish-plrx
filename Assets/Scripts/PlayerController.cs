@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : CharactersController
@@ -7,11 +8,20 @@ public class PlayerController : CharactersController
     [SerializeField] private Text counterDamage;
     [SerializeField] private Text counterArmor;
     [SerializeField] private Text counterCoins;
+    [SerializeField] private Animator DeadAnim;
+    bool isDead = false;
+    float deadTime = 0;
 
     private void Start()
     {
         UpdateUI();
+    }
 
+    override protected void Dead() {
+        base.Dead();
+        isDead = true;
+        deadTime = 2.0f;
+        DeadAnim.SetTrigger("Dead");
     }
 
     public override void ReceiveDamage(int damage)
@@ -65,6 +75,19 @@ public class PlayerController : CharactersController
     
     private void Update()
     {
+        if (deadTime > 0.0f) { 
+            deadTime -= Time.deltaTime;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && isDead && deadTime <= 0.0f) {
+            SceneManager.LoadScene("MainMenu");
+            return;
+        }
+
+        if (isDead) {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && targetController != null) 
         {
             Attack();

@@ -142,6 +142,9 @@ public class GeneratableBackground : BackgroundNode
     {
         mainCamera = camera;
         _cameraPlane = GeometryUtility.CalculateFrustumPlanes(mainCamera);
+        foreach (BackgeoundEntiity config in _configs) {
+            config.isUsed = false;
+        }
 
         CheckAdd();
         counter = 0;
