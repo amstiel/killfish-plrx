@@ -40,7 +40,7 @@ public class DialogTextRenderer : MonoBehaviour
     void Start()
     {
         Debug.Log("DialogTextRenderer started");
-        textComponent = textRendererObject.GetComponentInChildren<Text>();
+       
     }
 
     // Update is called once per frame
@@ -85,6 +85,7 @@ public class DialogTextRenderer : MonoBehaviour
         splitTextToChunks();
         currentChunkIndex = 0;
         isCurrentChunkRendered = false;
+        textComponent = textRendererObject.GetComponentInChildren<Text>();
         StartCoroutine(RenderText(textChunks[0]));
     }
 
