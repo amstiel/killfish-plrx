@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee40282e97da0ce42ae7fcd88d5d9bc6, type: 3}
-  m_Name: O
+  m_Name: Frog
   m_EditorClassIdentifier: 
-  frames: {x: 30, y: 35}
-  chance: 10
+  frames: {x: 18, y: 21}
+  chance: 1
   isSpesial: 1
-  prefab: {fileID: 882034253067276478, guid: a11e89f26eb844a4fbf0a82f7de4a37c, type: 3}
-  sprite: {fileID: -7512258525145182929, guid: fb065ae24161ef148890a6b514f0052c, type: 3}
+  prefab: {fileID: 6352387502079319264, guid: 21640028034d9994882872d695ee8a4e, type: 3}
+  sprite: {fileID: -7717450174661515925, guid: 5b9532b0525d11c45ad4c72c43f0f2f4, type: 3}

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee40282e97da0ce42ae7fcd88d5d9bc6, type: 3}
-  m_Name: Vologda
+  m_Name: O
   m_EditorClassIdentifier: 
-  frames: {x: 25, y: 30}
+  frames: {x: 19, y: 21}
   chance: 10
   isSpesial: 1
   prefab: {fileID: 882034253067276478, guid: a11e89f26eb844a4fbf0a82f7de4a37c, type: 3}
-  sprite: {fileID: -7420762205983956219, guid: c79314234d343f947b0351dcc2f266fb, type: 3}
+  sprite: {fileID: -7512258525145182929, guid: fb065ae24161ef148890a6b514f0052c, type: 3}
