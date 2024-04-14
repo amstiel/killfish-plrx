@@ -1,17 +1,31 @@
 using UnityEngine;
+using UnityEngine.Events;
 
-public class BattleTrigger : MonoBehaviour
+public class BattleController : MonoBehaviour
 {
-    [SerializeField]private PlayerController playerController;
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private GameObject speachRenderer;
     private EnemyController enemyController;
+    private UnityEvent eventSpeechEnd;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         collision.TryGetComponent(out enemyController);
-        StartBattle(enemyController, playerController);
+        StartDialogue();
     }
 
-    private void StartBattle(EnemyController enemyController, PlayerController playerController) 
+    private void StartDialogue()
+    {
+        eventSpeechEnd = enemyController.StartDialogue(speachRenderer);
+        eventSpeechEnd.AddListener(() => StartBattle(enemyController, playerController));
+        speachRenderer.SetActive(true);
+    }
+    private void EndDialogue()
+    {
+        eventSpeechEnd.RemoveAllListeners();
+    }
+
+    private void StartBattle(EnemyController enemyController, PlayerController playerController)
     {
         WorldInfo.Instance().SetState(WorldInfo.GameState.Fight);
         enemyController.deadEvent.AddListener(EndBattle);
@@ -20,7 +34,7 @@ public class BattleTrigger : MonoBehaviour
         enemyController.SetTargetController(playerController);
     }
 
-    private void EndBattle() 
+    private void EndBattle()
     {
         if (enemyController != null)
         {
@@ -29,5 +43,4 @@ public class BattleTrigger : MonoBehaviour
         playerController.EndBattle();
         WorldInfo.Instance().SetState(WorldInfo.GameState.Moving);
     }
-
 }

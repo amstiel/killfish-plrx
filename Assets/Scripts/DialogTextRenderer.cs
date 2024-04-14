@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class DialogTextRenderer : MonoBehaviour
@@ -8,6 +9,7 @@ public class DialogTextRenderer : MonoBehaviour
     public string textToRender;
     public float textSpeed = 0.1f;
     public int maxCharsInBubble = 48;
+    public UnityEvent spechEndEvent;
 
     public Vector2 offset = new Vector2(-125, 100);
 
@@ -37,6 +39,7 @@ public class DialogTextRenderer : MonoBehaviour
             }
             yield return null;
         }
+        spechEndEvent.Invoke();
     }
 
 
