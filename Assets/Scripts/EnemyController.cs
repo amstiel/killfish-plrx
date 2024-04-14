@@ -19,9 +19,18 @@ public class EnemyController : CharactersController
     {
         textRenderer.textRendererObject = speachRenderer;
         textRenderer.enabled = true;
+        textRenderer.StartTextRender();
         return textRenderer.spechEndEvent;
 
     }
+
+    public UnityEvent StartAfterDeathDialogue(GameObject speachRenderer) 
+    {
+        textRenderer.enabled = true;
+        textRenderer.StartFinalText();
+        return textRenderer.spechEndEvent;
+    } 
+
     public override void EndBattle()
     {
         base.EndBattle();

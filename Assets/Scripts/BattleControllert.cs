@@ -29,6 +29,7 @@ public class BattleController : MonoBehaviour
 
     private void StartBattle(EnemyController enemyController, PlayerController playerController)
     {
+        speachRenderer.SetActive(false);
         eventSpeechEnd.RemoveAllListeners();
         WorldInfo.Instance().SetState(WorldInfo.GameState.Fight);
         enemyController.deadEvent.AddListener(EndBattle);
@@ -39,6 +40,8 @@ public class BattleController : MonoBehaviour
 
     private void EndBattle()
     {
+        speachRenderer.SetActive(true);
+        enemyController.StartAfterDeathDialogue(speachRenderer);
         eventSpeechEnd.AddListener(EndDialogue);
 
         if (enemyController != null)
