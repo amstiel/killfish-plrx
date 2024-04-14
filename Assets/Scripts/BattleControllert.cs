@@ -6,19 +6,37 @@ public class BattleController : MonoBehaviour
     [SerializeField] private PlayerController playerController;
     [SerializeField] private GameObject speachRenderer;
     private EnemyController enemyController;
+    private FriendController friendController;
     private UnityEvent eventSpeechEnd;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.TryGetComponent(out enemyController);
-        StartDialogue();
+        
+        if (collision.tag == "Enemy")
+        {
+            collision.TryGetComponent(out enemyController);
+            StartEnemyDialogue();
+        }
+
+        if (collision.tag == "Friend")
+        {
+            collision.TryGetComponent(out friendController);
+            StartFriendsDialogue();
+        }
     }
 
-    private void StartDialogue()
+    private void StartEnemyDialogue()
     {
         WorldInfo.Instance().SetState(WorldInfo.GameState.Speaking);
         eventSpeechEnd = enemyController.StartDialogue(speachRenderer);
         eventSpeechEnd.AddListener(() => StartBattle(enemyController, playerController));
+        speachRenderer.SetActive(true);
+    }
+
+    private void StartFriendsDialogue()
+    {
+        WorldInfo.Instance().SetState(WorldInfo.GameState.Speaking);
+        eventSpeechEnd = enemyController.StartDialogue(speachRenderer);
         speachRenderer.SetActive(true);
     }
     private void EndDialogue()
