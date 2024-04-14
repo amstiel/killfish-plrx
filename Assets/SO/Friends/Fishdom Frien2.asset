@@ -15,5 +15,5 @@ MonoBehaviour:
   frames: {x: 86, y: 90}
   chance: 1
   isSpesial: 1
-  prefab: {fileID: 6352387502079319264, guid: 7fb0e927a286a3f49bf2051b955eca95, type: 3}
+  prefab: {fileID: 6352387502079319264, guid: 8dbc8833ee4453c4eb33b438ff737574, type: 3}
   sprite: {fileID: -7717450174661515925, guid: 5b9532b0525d11c45ad4c72c43f0f2f4, type: 3}
