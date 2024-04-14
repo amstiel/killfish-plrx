@@ -55,7 +55,6 @@ public class DialogTextRenderer : MonoBehaviour
                 isCurrentChunkRendered = false;
                 StartCoroutine(RenderText(textChunks[currentChunkIndex]));
             } else {
-                Debug.Log("End of speach");
                 spechEndEvent.Invoke();
             }
         }

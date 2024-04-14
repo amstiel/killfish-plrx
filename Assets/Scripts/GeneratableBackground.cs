@@ -34,7 +34,7 @@ public class GeneratableBackground : BackgroundNode
         var currentConfigs = new List<BackgeoundEntiity>();
         foreach (BackgeoundEntiity config in _configs)
         {
-            if ((config.frames[0] == -1 || config.frames[0] <= WorldInfo.Instance().globalFrame) &&
+            if (!config.isUsed && (config.frames[0] == -1 || config.frames[0] <= WorldInfo.Instance().globalFrame) &&
                 (config.frames[1] == -1 || config.frames[1] >= WorldInfo.Instance().globalFrame))
             {
                 if (config.isSpesial)
@@ -61,7 +61,7 @@ public class GeneratableBackground : BackgroundNode
             for (; (index < currentConfigs.Count - 1) && currentConfigs[index].chance < rand; index++, rand -= currentConfigs[index].chance) ;
 
             if (currentConfigs[index].isSpesial) {
-                currentConfigs[index].chance = 0;
+                currentConfigs[index].isUsed = true;
             }
 
             if (_entities.Count == 0)

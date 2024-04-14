@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,4 +12,5 @@ public class BackgeoundEntiity : ScriptableObject
     public bool isSpesial = false;
     public GameObject prefab;
     public Sprite sprite;
+    [NonSerialized] public bool isUsed = false;
 }
