@@ -56,7 +56,7 @@ public class GeneratableBackground : BackgroundNode
 
         while (_entities.Count == 0 || IsRenderOnScreen(_entities[_entities.Count - 1].Item2))
         {
-              int rand = UnityEngine.Random.Range(0, maxRand);
+            int rand = UnityEngine.Random.Range(0, maxRand);
             int index = 0;
             for (; currentConfigs[index].chance < rand; index++, rand -= currentConfigs[index].chance) ;
 
